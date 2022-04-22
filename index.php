@@ -7,6 +7,12 @@ class Video {
     public $published = false;
     public $titles;
 
+    public function __construct($type, $duration, $published){
+        $this->type = $type;
+        $this->duration = $duration;
+        $this->published = $published;
+    }
+
     public function play() {
 
         return $this->published ? "The video is playing": "This video is not yet available.";
@@ -15,8 +21,12 @@ class Video {
             return $this->published ? "The video is paused": "";
     }
 }
+header('Content-Type:text/plain',true);
+
 $introduction = new Video();
-echo $introduction->play();
+$introduction->published = true;
+$introduction->author = 'Devrex';
+echo $introduction->play(), PHP_EOL, $introduction->pause(), PHP_EOL, $introduction->author;
 
 
 
