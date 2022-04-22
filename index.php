@@ -23,12 +23,15 @@ class Video {
 }
 header('Content-Type:text/plain',true);
 
-$introduction = new Video();
-$introduction->published = true;
-$introduction->author = 'Devrex';
+$introduction = new Video('mp4','02:30:40',"Introduction to OOP");
+
+$video2 = new Video('mp4','01:15:00','Advanced OOP');
+
+// $introduction->published = true;
+// $introduction->author = 'Devrex';
+
 echo $introduction->play(), PHP_EOL, $introduction->pause(), PHP_EOL, $introduction->author;
 
 
 
-$video2 = new Video();
 // var_dump($introduction);
